@@ -93,7 +93,9 @@
           <div
             class="hero-content text-neutral-content py-12 lg:py-48 lg:flex-row flex-col gap-8 lg:gap-14"
           >
-            <div class="lg:max-w-lg lg:space-y-8">
+            <div
+              class="lg:max-w-lg lg:space-y-8 flex flex-col justify-center items-center lg:justify-start lg:items-start"
+            >
               <h1 class="mb-5 text-3xl font-extrabold lg:text-6xl">
                 Welcome to the
                 <span
@@ -107,7 +109,7 @@
                 design.
               </p>
               <label
-                class="input input-bordered flex items-center gap-2 w-4/5 rounded-full lg:py-8"
+                class="input input-bordered flex items-center gap-2 w-4/5 rounded-full py-8"
               >
                 <input
                   id="searchPosts"
@@ -161,54 +163,6 @@
         <!-- discussions with selections -->
         <div class="flex lg:flex-row flex-col gap-8 my-12">
           <div id="post-container" class="lg:w-8/12 space-y-5">
-            <!-- demo card showing without dynamic value  -->
-            <!-- ghfhgjfhd -->
-            <!-- <div
-              class="p-6 lg:p-12 flex gap-6 lg:flex-row flex-col items-center lg:items-start bg-[#F3F3F5]"
-            >
-              <div class="indicator">
-                <span class="indicator-item badge ${post.isActive ? "bg-green-600": "bg-red-500"}"></span>
-                <div class="avatar">
-                  <div class="w-24 rounded-xl">
-                    <img src=${post.image} alt="">
-                  </div>
-
-                </div>
-              </div>
-              <div class="space-y-4 w-full">
-                <div class="flex gap-4 opacity-60">
-                  <p>Category</p>
-                  <p>Author: author.name</p>
-                </div>
-                <h3 class="text-2xl font-bold opacity-70">title</h3>
-                <p class="opacity-40">description</p>
-                <hr class="border border-dashed border-gray-300">
-                <div class="flex justify-between font-bold  opacity-45">
-              <div class="flex gap-4">
-
-                <div class="space-x-2 flex items-center">
-                  <i class="fa-regular fa-comment"></i>
-                  <p>Comment_count</p>
-                </div>
-                <div class="space-x-2 flex items-center">
-                  <i class="fa-regular fa-eye"></i>
-                  <p>view_count</p>
-                </div>
-                <div class="space-x-2 flex items-center">
-                  <i class="fa-regular fa-clock"></i>
-                  <p>postes_time Min</p>
-                </div>
-              </div>
-              <div class="opacity-100">
-                <button id="addToList" onclick="markAsRead()" data-post="${JSON.stringfy(e)}" class="addToList btn btn-circle bg-green-500  btn-sm">
-                  <<i class="fa-solid fa-evenlope-open"></i> 
-                  <i class="fa-regular fa-envelope"></i>
-                </button>
-              </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- ghfhgjfhd -->
             <div class="flex w-full justify-center">
               <span
                 id="postLoader"
@@ -226,22 +180,7 @@
                   as read <span id="markAsReadCounter">0</span>
                 </p>
               </div>
-              <div class="space-y-4 opacity-70" id="markAsReadContainer">
-                <!-- dynamic content -->
-                <!-- day -->
-
-                <!-- <div
-                  class="flex justify-between p-2 lg:p-3 bg-white rounded-2xl items-center gap-3"
-                >
-                  <div class="w-4/5 lg:w-1/5">
-                    <p>${}</p>
-                  </div>
-                  <div class="w-4/5 lg:w-1/5 flex justify-end">
-                    <p><i class="fa-regular fa-eye"></i>${}</p>
-                  </div>
-                </div> -->
-                <!-- day --->
-              </div>
+              <div class="space-y-4 opacity-70" id="markAsReadContainer"></div>
             </div>
           </div>
         </div>
@@ -286,45 +225,8 @@
 
         <div
           id="latest-post-container"
-          class="flex gap-5 lg:flex-row flex-col items-center justify-evenly"
-        >
-          <!-- show latest post in span tag wihtout dynamic value  -->
-          <div class="card lg:w-96 pb-5 bg-base-100 shadow-2xl">
-            <figure class="lg:px-6 px-4 pt-4 lg:pt-8">
-              <img src="${e.cover_image}" alt="Shoes" class="rounded-xl" />
-            </figure>
-            <div class="p-5 lg:p-10 space-y-4 lg:space-y-5">
-              <p class="opacity-50 text-start">
-                <i class="fa-solid fa-calendar-days me-2"></i
-                >author?.posted_date || "No Publish Date"
-              </p>
-              <h2 class="card-title text-start">title</h2>
-              <p class="text-start">description</p>
-              <div class="card-actions flex gap-5 items-center">
-                <div class="avatar">
-                  <div
-                    class="lg:w-12 w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
-                  >
-                    <img src="${e.profile_image}" />
-                  </div>
-                </div>
-                <div>
-                  <h3 class="text-start font-extrabold">author.name</h3>
-                  <p class="text-start opacity-60">
-                    author?.designation || "Unknown"
-                  </p>
-                </div>
-              </div>
-
-              <span
-                id="latestPostLoader"
-                class="loading loading-infinity loading-lg lg:mt-24 text-primary hidden"
-              >
-              </span>
-              <!-- dynamic content -->
-            </div>
-          </div>
-        </div>
+          class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-20 gap-8"
+        ></div>
       </section>
     </main>
 
